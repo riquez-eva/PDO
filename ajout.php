@@ -1,3 +1,14 @@
+<?php
+try {
+    // Connexion
+    require 'liens/connect.php';
+
+} catch (Exception $e) {
+    echo 'Erreur : '.$e->getMessage().'<br />';
+    echo 'N° : '.$e->getCode();
+    exit('Fin du script');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +18,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<?php
-try {
-    // Connexion
-require 'connect.php';
-
-$requete = $db->prepare("INSERT INTO disc (disc_title) VALUES (?);");
-$requete->execute(array($name));
-
-
-
-} catch (Exception $e) {
-    echo 'Erreur : '.$e->getMessage().'<br />';
-    echo 'N° : '.$e->getCode();
-    exit('Fin du script');
-}
-?>
 <body class="container-fluid p-5">
     <p>coucou</p>
 <h1>Ajouter un nouveau vinyl</h1>
