@@ -24,16 +24,7 @@ try {
     exit('Fin du script');
 }
 ?>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Test PDO</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<body class="container fluid">
+<?php require 'header.php'; ?>
     <h1>Liste des disques (<?php echo $totalDiscs; ?>)</h1>
 <!--bouton ajouter-->
     <div class="d-flex justify-content-end mb-3">
@@ -103,8 +94,4 @@ try {
 </div>
 </div>
     </main>
-
-
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
-</html>
+<?php require 'footer.php'; ?>

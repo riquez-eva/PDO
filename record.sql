@@ -1,4 +1,4 @@
--- Active: 1756996441102@@127.0.0.1@3306@mysql
+-- Active: 1757506464272@@127.0.0.1@3306@record
 DROP DATABASE IF EXISTS record;
 
 CREATE DATABASE record;
@@ -57,4 +57,4 @@ INSERT INTO disc (disc_id, disc_title, disc_year, disc_picture, disc_label, disc
 
 
 SELECT *
-FROM artist;
+FROM disc;
