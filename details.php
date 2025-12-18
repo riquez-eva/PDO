@@ -68,9 +68,9 @@ $disc = $requete->fetch();
         </div>
     </div>
 <!--Boutons CRUD-->
-<a href="#" class="btn btn-primary btn-sm my-3">Modifier</a>
-<a href="#" class="btn btn-primary btn-sm my-3">Supprimer</a>
-<a href="#" class="btn btn-primary btn-sm my-3">Retour</a>
+<a href="modif_form.php?id=<?= $disc["disc_id"]?>" class="btn btn-primary btn-sm my-3">Modifier</a>
+<a href="script_delete.php?id=<?= $disc["disc_id"] ?>" class="btn btn-danger btn-sm my-3" onclick="return window.confirm('Vosu êtes sur le point de supprimer un disque. Êtes-vous sûr de vouloir supprimer?')">Supprimer</a>
+<a href="index.php" class="btn btn-primary btn-sm my-3">Retour</a>
 </div>
 
 <?php require 'footer.php' ?>

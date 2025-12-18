@@ -2,6 +2,28 @@
     // Connexion
    require 'liens/connect.php';
 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+//manière de sécuriser
+    move_uploaded_file($_FILES["picture"]["tmp_name"], "pictures/photo.png");      
+
+    
+    $title = $_POST["title"];
+    $year = $_POST["year"];
+    $label = $_POST["label"];
+    $genre = $_POST["genre"];
+    $price = $_POST["price"];
+    $artist = $_POST["artist"];
+    $picture = $_POST["picture"];
+    
+    
+    require(__DIR__."/liens/connect.php");
+    
+    $sql = "INSERT INTO disc (disc_title, disc_year, disc_label, disc_genre, disc_price, artist_id, disc_picture) VALUES (?, ?, ?, ?, ?, ?, ?);";
+    $requete = $db->prepare($sql);
+    $requete->execute([$title, $year, $label, $genre, $price, $artist, 'photo.png']);
+}
+
+
    $requete= $db->query("SELECT * FROM artist;");
    $artist=$requete->fetchAll();
 
@@ -10,7 +32,7 @@
     <p>coucou</p>
 <h1>Ajouter un nouveau vinyl</h1>
 <main class="container-fluid p-5">
-   <form action="ajout_script.php" method="post" enctype="multipart/form-data">
+   <form action="" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         Title <input class="form-control" type="text" placeholder="Enter Title" aria-label="Enter Title" name="title"> <br>
         Year <input class="form-control" type="number" placeholder="Enter Year" aria-label="Enter Year" name="year"> <br>
